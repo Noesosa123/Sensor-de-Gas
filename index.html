@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body style="background-color:turquoise; font-size: 30px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: black;">
+        <center><h1 style="color: black; text-decoration: underline; text-decoration-color: #d61414; text-align: center;">Sensor de Gas y Rele por WIFI</h1></center>
+
+        <p style="color: black;">
+            Materia: <strong style="color: maroon;">Digitales</strong> <br>
+            Profesor: <strong style="color: brown;">Bulacio Ariel</strong> <br>
+            Curso: <strong style="color: blue;">6to 2da</strong> <br>
+            Alumnos: <strong style="color: blue;">Paez Melody, Paez Joscelyn, Sosa Noemi y Villegas Benicio</strong>
+        </p>
+
+        <p>Nivel de gas: " + String(gasPercentage) + "%</p>\
+        <p>Estado del rele: " + String(relayState ? "<strong style="background-color: #47d65a; border-radius: 15px;">Encendido</strong>" : "<strong style="background-color: rgb(235, 72, 72); border-radius: 15px">Apagado</strong>") + "</p>\ 
+        <p>Umbral actual: " + String(gasThreshold) + "%</p>\
+        <button  style="color: red; 
+        background: linear-gradient(to right, #ffcccb, #17d431);
+        border-radius: 20px;
+        padding: 20px;
+        cursor: pointer;"
+        onmouseout="this.style.background='linear-gradient(to right, #ffcccb, #17d431)'; this.style.color='maroon';"
+        onmouseover="this.style.background='linear-gradient(to right, #fff, #fff)'; this.style.color='white';">
+            <a href='/relay/on'>Encender Rele</a></button><br>\
+
+        <button  style="color: red; margin-top: 20px;
+        background: linear-gradient(to right, #17d431, #d61414);
+        border-radius: 20px;
+        padding: 20px;
+        cursor: pointer;"
+        onmouseout="this.style.background='linear-gradient(to right, #17d431, #d61414)'; this.style.color='maroon';"
+        onmouseover="this.style.background='linear-gradient(to right, #fff, #fff)'; this.style.color='white';">
+        <a href='/relay/off'>Apagar Rele</a><br></button>\
+
+        <form action='/set-threshold' method='get'>\
+          <label for='threshold'>Establecer nuevo umbral (%):</label>\
+          <input type='number' id='threshold' name='threshold' step='1' style="background-color: wheat; padding: 10px; color: black;">\
+          <input type='submit' value='Actualizar' style="background-color: antiquewhite; padding: 10px; cursor: pointer;
+          "onmouseover="this.style.background='linear-gradient(to right, #17d431, #d61414)'; this.style.color='white';"
+          onmouseout="this.style.background='linear-gradient(to right, #fff, #fff)'; this.style.color='black';">\
+        </form>\
+</body>
+</html>
